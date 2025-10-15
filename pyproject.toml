@@ -1,0 +1,23 @@
+[project]
+name = "spinscribe"
+version = "0.1.0"
+description = "SpinScribe AI Content Creation Crew"
+authors = [{ name = "Spniutech Team" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]>=0.201.1,<1.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+spinscribe = "spinscribe.main:run"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/spinscribe"]
+
+[tool.crewai]
+type = "crew"
